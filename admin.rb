@@ -1,4 +1,4 @@
-# ruby avion_codepile_fix_login.rb
+# ruby admin.rb
 # Fix this code: https://www.codepile.net/pile/M5XMAE4x
 
 module AdminPermisson
@@ -26,7 +26,7 @@ class User
 
   def change_password=(new_password)
     @password = new_password
-    puts "Buyer's password changed."
+    puts "Password changed."
   end
 
   protected
@@ -41,11 +41,6 @@ class Admin < User
 
   def admin_login
     login
-  end
-
-  def change_password=(new_password)
-    @password = new_password
-    puts "Admin's password changed."
   end
 end
 
