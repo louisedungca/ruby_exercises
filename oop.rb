@@ -37,7 +37,7 @@ class Book
     @genre = genre
   end
 
-  def show_details
+  def display_info
     puts "Book: #{@title} by #{@author} (Genre: #{@genre})"
   end
 
@@ -48,5 +48,5 @@ end
 
 book_1 = Book.new('Le Petit Prince', 'Antoine Exupery', 'fiction')
 
-book_1.show_details
+book_1.display_info
 book_1.currently_reading

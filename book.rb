@@ -1,3 +1,6 @@
+# ruby book.rb
+# OOP Concepts-- encapsulation, abstraction, polymorphism(inheritance and duck typing)
+
 class Book
   # attr_accessor :title, :author, :genre
 
@@ -150,18 +153,18 @@ class Magazine
   end
 end
 
-class LibraryCatalog
-  def display_details(library_item)
-    library_item.display_info
+class Catalog
+  def display_details(catalog_item)
+    catalog_item.display_info
   end
 end
 
-library_catalog = LibraryCatalog.new
+catalog_1 = Catalog.new
 
 book_1 = Book.new("Book Title", "Author", "Fiction")
 movie_1 = Movie.new("Movie Title", "Director A", "Action")
 magazine_1 = Magazine.new("Magazine Title", "Sports")
 
-library_catalog.display_details(book_1)
-library_catalog.display_details(movie_1)
-library_catalog.display_details(magazine_1)
+catalog_1.display_details(book_1)
+catalog_1.display_details(movie_1)
+catalog_1.display_details(magazine_1)
