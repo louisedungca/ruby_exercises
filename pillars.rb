@@ -29,7 +29,6 @@ chocolate_cupcake.prepare
 # Create an object that implements Abstraction
 
 class Book
-  # attr_accessor :title, :author, :genre
 
   def initialize(title, author, genre)
     @title = title
@@ -41,7 +40,6 @@ class Book
   def checkout_book
     if @available
       process_checkout
-      puts "Book checked out successfully. Enjoy reading #{@title} by #{@author}!"
     else
       puts "Sorry, the book was already borrowed."
     end
@@ -49,10 +47,9 @@ class Book
 
   def return_book
     if @available
-      puts "This book is not checked out. No need to return."
+      puts "This book is not checked out."
     else
       process_return
-      puts "Book returned. Thank you for returning #{@title} by #{@author}!"
     end
   end
 
@@ -65,13 +62,15 @@ class Book
   private
 
   def process_checkout
-    @available = false
     puts "Processing checkout: #{@title}..."
+    @available = false
+    puts "Book checked out successfully. Enjoy reading #{@title} by #{@author}!"
   end
 
   def process_return
-    @available = true
     puts "Processing return: #{@title}..."
+    @available = true
+    puts "Book returned. Thank you for returning #{@title} by #{@author}!"
   end
 end
 
@@ -92,6 +91,7 @@ book_1.return_book
 puts "Trying to return the book again..."
 book_1.return_book
 
+
 # Create objects that implements Polymorphism by Inheritance and Duck-typing
 # Polymorphism - Inheritance
 
@@ -100,21 +100,27 @@ class EBook < Book
   def initialize(title, author, genre, format)
     super(title, author, genre)
     @format = format
-    @downloaded = false
+    @is_downloaded = false
   end
 
   def download
-    if @downloaded
+    if @is_downloaded
       puts "You've already downloaded the e-book #{@title} in #{@format} format."
     else
-      @downloaded = true
-      puts "E-book downloaded successfully in #{@format} format. Enjoy reading #{@title} by #{@author}!"
+      download_ebook
     end
   end
 
   def display_info
     super
     puts "Format: #{@format}"
+  end
+
+  private
+
+  def download_ebook
+    @is_downloaded = true
+    puts "E-book downloaded successfully in #{@format} format. Enjoy reading #{@title} by #{@author}!"
   end
 end
 
@@ -145,7 +151,7 @@ class Book
   end
 end
 
-class DVD
+class Movie
   def initialize(title, director, genre)
     @title = title
     @director = director
@@ -153,7 +159,7 @@ class DVD
   end
 
   def display_info
-    puts "[DVD Details]
+    puts "[Movie Details]
     Title: #{@title}
     Director: #{@director}
     Genre: #{@genre}"
@@ -182,9 +188,9 @@ end
 library_catalog = LibraryCatalog.new
 
 book_1 = Book.new("Book Title", "Author", "Fiction")
-dvd_1 = DVD.new("Movie Title", "Director A", "Action")
+movie_1 = Movie.new("Movie Title", "Director A", "Action")
 magazine_1 = Magazine.new("Magazine Title", "Sports")
 
 library_catalog.display_details(book_1)
-library_catalog.display_details(dvd_1)
+library_catalog.display_details(movie_1)
 library_catalog.display_details(magazine_1)
