@@ -29,7 +29,7 @@ chocolate_cupcake.prepare
 # Create an object that implements Abstraction
 
 class Book
-  attr_accessor :title, :author, :genre
+  # attr_accessor :title, :author, :genre
 
   def initialize(title, author, genre)
     @title = title
@@ -40,7 +40,7 @@ class Book
 
   def checkout_book
     if @available
-      @available = false
+      process_checkout
       puts "Book checked out successfully. Enjoy reading #{@title} by #{@author}!"
     else
       puts "Sorry, the book was already borrowed."
@@ -51,7 +51,7 @@ class Book
     if @available
       puts "This book is not checked out. No need to return."
     else
-      @available = true
+      process_return
       puts "Book returned. Thank you for returning #{@title} by #{@author}!"
     end
   end
@@ -65,30 +65,32 @@ class Book
   private
 
   def process_checkout
+    @available = false
     puts "Processing checkout: #{@title}..."
   end
 
   def process_return
+    @available = true
     puts "Processing return: #{@title}..."
   end
 end
 
-book = Book.new("This Is A Book", "Author Name", "Non-fiction")
-
+book_1 = Book.new("This Is A Book", "Author Name", "Non-fiction")
+# p book_1.title
 puts "[Book Information]"
-book.display_info
+book_1.display_info
 
 puts "Trying to checkout the book..."
-book.checkout_book
+book_1.checkout_book
 
 puts "Trying to checkout the book again..."
-book.checkout_book
+book_1.checkout_book
 
 puts "Returning the book..."
-book.return_book
+book_1.return_book
 
 puts "Trying to return the book again..."
-book.return_book
+book_1.return_book
 
 # Create objects that implements Polymorphism by Inheritance and Duck-typing
 # Polymorphism - Inheritance
