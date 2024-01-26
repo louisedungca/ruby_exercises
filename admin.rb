@@ -11,7 +11,6 @@ module BuyerPermission
   def buy
     puts "Buyer has bought an item"
   end
-
 end
 
 class User
