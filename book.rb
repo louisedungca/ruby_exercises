@@ -2,7 +2,6 @@
 # OOP Concepts-- encapsulation, abstraction, polymorphism(inheritance and duck typing)
 
 class Book
-  # attr_accessor :title, :author, :genre
 
   def initialize(title, author, genre)
     @title = title
@@ -56,14 +55,14 @@ book_1.display_info
 puts "Trying to checkout the book..."
 book_1.checkout_book
 
-puts "Trying to checkout the book again..."
-book_1.checkout_book
+# puts "Trying to checkout the book again..."
+# book_1.checkout_book
 
 puts "Returning the book..."
 book_1.return_book
 
-puts "Trying to return the book again..."
-book_1.return_book
+# puts "Trying to return the book again..."
+# book_1.return_book
 
 
 # Create objects that implements Polymorphism by Inheritance and Duck-typing

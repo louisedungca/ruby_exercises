@@ -25,7 +25,7 @@ def find_lowest_integer(arr)
 
   while left_index <= right_index
     mid_index = (left_index + right_index) / 2
-    mid_value = arr[mid_index]
+    mid_value = arr[mid_index.floor]
 
     if mid_value < min_value
       min_value = mid_value
@@ -57,6 +57,20 @@ class Profile
   end
 end
 
+## initialize
+my_profile = Profile.new('Juan', 18, 'Bulacan', 'Instructor')
+
+puts my_profile.full_name
+my_profile.full_name = 'Juan Cruz'
+
+my_profile.age = 25
+my_profile.work = 'Software Engineer'
+
+puts my_profile.full_name
+puts my_profile.age
+puts my_profile.work
+puts my_profile.address
+
 # Create your own object with attributes and methods
 
 class Book
@@ -81,3 +95,7 @@ book_1 = Book.new('Le Petit Prince', 'Antoine Exupery', 'fiction')
 
 book_1.display_info
 book_1.currently_reading
+
+
+
+## ruby oop.rb
