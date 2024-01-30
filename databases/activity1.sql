@@ -1,11 +1,11 @@
 -- Create a new table: students
 CREATE TABLE students (
-    id             integer                     PRIMARY KEY,
-    first_name     character varying(100)         NOT NULL,
-    middle_name    character varying(100)         NULL,
-    last_name     	character varying(100)        NOT NULL,
-    age             integer                			  DEFAULT 0,
-    location        character varying(100)        NOT NULL
+    id integer PRIMARY KEY,
+    first_name character varying(100) NOT NULL,
+    middle_name character varying(100) NULL,
+    last_name character varying(100) NOT NULL,
+    age integer DEFAULT 0,
+    location character varying(100) NOT NULL
 );
 
 -- Add columns: id, first_name, middle_name, last_name, age, location
