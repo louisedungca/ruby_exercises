@@ -26,7 +26,7 @@ SELECT * FROM classrooms;
 
 -- Combine the two tables, students and classrooms, using inner join, left join, right join and full join.
 SELECT * FROM students s
-INNER JOIN classrooms c 
+JOIN classrooms c 
 ON s.id = c.student_id;
 
 SELECT * FROM students s
