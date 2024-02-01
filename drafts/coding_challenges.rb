@@ -39,6 +39,71 @@ def unique_in_order(input)
   p filtered_arr
 end
 
-unique_in_order('AAAABBCCDAABBB')
-unique_in_order('ABBCcAD')
-unique_in_order([1,2,2,3,3])
+# unique_in_order('AAAABBCCDAABBB')
+# unique_in_order('ABBCcAD')
+# unique_in_order([1,2,2,3,3])
+
+
+## disemvowel trolls
+# remove all of the vowels from the trolls' comments, neutralizing the threat.
+# Your task is to write a method that takes a string and return a new string with all vowels removed.
+def remove_vowels(str)
+  vowels_arr = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"]
+  final_str = ""
+
+  str.each_char do |char|
+    if !vowels_arr.include?(char)
+      final_str += char
+    end
+  end
+
+  p final_str
+end
+
+# remove_vowels("Hello, World!")
+# remove_vowels("Try to remove the vowels here.")
+# remove_vowels("You can still read this without the vowels -123???")
+
+
+## Century from Year
+# Given a year, return the century it is in.
+# The first century spans from the year 1 up to and including the year 100, The second - from the year 101 up to and including the year 200, etc.
+def centuryFromYear(year)
+  number = year / 100
+
+  if year % 100 != 0
+    p number.to_i + 1
+  else
+    p number
+  end
+end
+
+# centuryFromYear(1705)
+# centuryFromYear(1900)
+# centuryFromYear(1601)
+# centuryFromYear(2000)
+
+## Format a string of names like 'Bart, Lisa & Maggie'
+# Given: an array containing hashes of names
+# Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
+# Note: all the hashes are pre-validated and will only contain A-Z, a-z, '-' and '.'.
+def list(data)
+  return "" if data.empty?
+
+  names_arr = data.map { |item| item[:name] }
+  last_name = names_arr.pop
+
+  if names_arr.empty?
+    puts last_name
+  else
+    puts "#{names_arr.join(", ")} & #{last_name}"
+  end
+end
+
+data = [
+  { name: "Bart" },
+  { name: "Lisa" },
+  { name: "Maggie" },
+]
+
+list(data)
