@@ -1,7 +1,7 @@
 ## unique in order
 # Implement the method unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
 def unique_in_order(input)
-  arr = input.is_a?(String) ? input.chars : input
+  arr = input.instance_of?(String) ? input.chars : input
 
   return [] if arr.empty?
 
