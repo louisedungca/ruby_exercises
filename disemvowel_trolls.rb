@@ -14,5 +14,7 @@ def disemvowel_trolls(str)
   p final_str
 end
 
+
+disemvowel_trolls("The website is for losers LOL!")
 disemvowel_trolls("Hello, World!")
 disemvowel_trolls("Try to remove the vowels here.")
