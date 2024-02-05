@@ -91,12 +91,17 @@ def list(data)
   return "" if data.empty?
 
   names_arr = data.map { |item| item[:name] }
-  last_name = names_arr.pop
 
-  if names_arr.empty?
-    puts last_name
+  if /^[A-Za-z\.\-]+$/.match?(names_arr.join)
+    last_name = names_arr.pop
+
+    if names_arr.empty?
+      puts last_name
+    else
+      puts "#{names_arr.join(", ")} & #{last_name}"
+    end
   else
-    puts "#{names_arr.join(", ")} & #{last_name}"
+    puts "Invalid input. Please only use letters and special characters: '-', '.' for name."
   end
 end
 
@@ -104,9 +109,11 @@ data = [
   { name: "Bart" },
   { name: "Lisa" },
   { name: "Maggie" },
+  { name: "Marge123" },
 ]
 
 list(data)
+
 
 
 ## the vowel code
