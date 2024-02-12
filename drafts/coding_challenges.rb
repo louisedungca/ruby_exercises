@@ -139,3 +139,20 @@ end
 
 encoded_str = encode("hello")
 decode(encoded_str)
+
+
+## Find the unique number
+# There is an array with some numbers. All numbers are equal except for one. Try to find it!
+def find_uniq(arr)
+  counts = Hash.new(0)
+
+  arr.each do |num|
+    counts[num] += 1
+  end
+
+  counts.find { |num, count| p num if count == 1 }
+
+end
+
+find_uniq([1, 1, 1, 2, 1, 1])
+find_uniq([0, 0, 0.55, 0, 0])
