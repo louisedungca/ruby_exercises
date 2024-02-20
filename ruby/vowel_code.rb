@@ -10,14 +10,14 @@ VOWELS = {
 }
 
 def encode(str)
-  encoded_str = str.downcase.chars.map { |char| VOWELS[char] || char }.join
-  p encoded_str
+  encoded_str = str.chars.map { |char| VOWELS[char] || char }.join
+  return encoded_str
 end
 
 def decode(encoded_str)
-  decoded_str = encoded_str.downcase.chars.map { |char| VOWELS.key(char.to_i) || char }.join
-  p decoded_str
+  decoded_str = encoded_str.chars.map { |char| VOWELS.key(char.to_i) || char }.join
+  return decoded_str
 end
 
-encode("hello")
-decode("h3 th2r2")
+p encode("hello")
+p decode("h3 th2r2")
