@@ -11,12 +11,12 @@ VOWELS = {
 
 def encode(str)
   encoded_str = str.chars.map { |char| VOWELS[char] || char }.join
-  return encoded_str
+  encoded_str
 end
 
 def decode(encoded_str)
   decoded_str = encoded_str.chars.map { |char| VOWELS.key(char.to_i) || char }.join
-  return decoded_str
+  decoded_str
 end
 
 p encode("hello")
