@@ -19,9 +19,5 @@ def decode(encoded_str)
   p decoded_str
 end
 
-# str = "hello"
-# encoded_str = encode(str)
-# decode(encoded_str)
-
 encode("hello")
 decode("h3 th2r2")
