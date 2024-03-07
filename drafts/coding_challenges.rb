@@ -156,3 +156,44 @@ end
 
 find_uniq([1, 1, 1, 2, 1, 1])
 find_uniq([0, 0, 0.55, 0, 0])
+
+
+## Find the middle element
+# create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements
+# The input to the function will be an array of three distinct numbers (Haskell: a tuple)
+
+#  check 1st int and see if 1st_int > 2nd_int
+#  true: check if int < 3rd_int
+#  false: check if int > 3rd_int
+#  if last check is true, 1st_int is middle int, print idx of current int
+#  if not pass, continue to the 2nd_int
+#  check if 2nd_int > 3rd_int
+#  if true: check if 2nd_int < 1st_int
+#  if false: check if 2nd_int > 1st_int
+#  if last check is true, 2nd_int is middle int, print 2nd_int idx
+#  if not true, print 3rd_int idx
+
+def gimme(arr)
+  arr.each_with_index do |current_int, idx|
+    second_int = arr[(idx + 1) % arr.size]
+    third_int = arr[(idx + 2) % arr.size]
+
+    if current_int > second_int
+      if current_int < third_int
+        p idx
+        return
+      end
+
+    else
+      if current_int > third_int
+        p idx
+        return
+      end
+    end
+
+  end
+end
+
+## Execute:
+gimme([2, 3, 1])   # => 0
+gimme([5, 10, 14]) # => 1
