@@ -1,5 +1,7 @@
 ## Nathan loves cycling
 # Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling. You get given the time in hours and you need to return the number of litres Nathan will drink, rounded to the smallest value.
+
+=begin
 def get_litres(time)
   litres = time * 0.5
   litres.floor
@@ -197,3 +199,47 @@ end
 ## Execute:
 gimme([2, 3, 1])   # => 0
 gimme([5, 10, 14]) # => 1
+
+
+
+## Enough is enough!
+# Given a list lst and a number N, create a new list that contains each number of lst at most N times without reordering.
+# For example if N = 2, and the input is [1,2,3,1,2,1,2,3], you take [1,2,3,1,2], drop the next [1,2] since this would lead to 1 and 2 being in the result 3 times, and then take 3, which leads to [1,2,3,1,2,3].
+
+def delete_nth()
+end
+
+# Execute:
+delete_nth([1, 1, 1, 1], 2) # => [1,1]
+delete_nth([20, 37, 20, 21], 1) # [20, 37, 21]
+
+=end
+
+## String Incrementer
+# Your job is to write a method which increments a string, to create a new string.
+# If the string already ends with a number, the number should be incremented by 1.
+# If the string does not end with a number. the number 1 should be appended to the new string.
+
+# Note: If the number has leading zeros the amount of digits should be considered.
+
+# check if str last letter has number after it
+# if false: add "1" on str
+# if true: separate letters from num
+# get num, convert to int, add 1
+# convert back to num back to str
+# append with letters
+
+def str_incrementer(str)
+  arr = str.scan(/\d+|[a-zA-Z]+/)
+  num = arr[-1].to_i + 1
+
+  if arr.size > 1
+    arr.pop
+  end
+
+  arr << num
+  p arr.join
+end
+
+str = "foo123"
+str_incrementer(str)
