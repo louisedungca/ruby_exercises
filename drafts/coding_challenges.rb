@@ -201,20 +201,6 @@ gimme([2, 3, 1])   # => 0
 gimme([5, 10, 14]) # => 1
 
 
-
-## Enough is enough!
-# Given a list lst and a number N, create a new list that contains each number of lst at most N times without reordering.
-# For example if N = 2, and the input is [1,2,3,1,2,1,2,3], you take [1,2,3,1,2], drop the next [1,2] since this would lead to 1 and 2 being in the result 3 times, and then take 3, which leads to [1,2,3,1,2,3].
-
-def delete_nth()
-end
-
-# Execute:
-delete_nth([1, 1, 1, 1], 2) # => [1,1]
-delete_nth([20, 37, 20, 21], 1) # [20, 37, 21]
-
-=end
-
 ## String Incrementer
 # Your job is to write a method which increments a string, to create a new string.
 # If the string already ends with a number, the number should be incremented by 1.
@@ -243,3 +229,33 @@ end
 
 str = "foo123"
 str_incrementer(str)
+
+=end
+
+
+## 6.3 Sorted? yes? no? how?
+# Complete the method which accepts an array of integers, and returns one of the following:
+# "yes, ascending" - if the numbers in the array are sorted in an ascending order
+# "yes, descending" - if the numbers in the array are sorted in a descending order
+# "no" - otherwise
+# Note: You can assume the array will always be valid, and there will always be one correct answer
+
+def sorted(int_arr)
+  return "Please enter an array of integers." unless int_arr.instance_of?(Array)
+  sort_arr = int_arr.sort
+
+  case true
+  when int_arr == sort_arr
+    "yes, ascending"
+  when int_arr == sort_arr.sort { |a, b| b <=> a }
+    "yes, descending"
+  else
+    "no"
+  end
+end
+
+
+p sorted([5, 4, 3, 2, 1])
+p sorted([1, 2, 3, 4])
+p sorted([1, 2, 4, 3])
+p sorted("1 2 3 4")

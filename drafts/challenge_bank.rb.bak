@@ -1,0 +1,64 @@
+CHALLENGE BANK
+
+## 6.1 Enough is enough!
+# Given a list lst and a number N, create a new list that contains each number of lst at most N times without reordering.
+# For example if N = 2, and the input is [1,2,3,1,2,1,2,3], you take [1,2,3,1,2], drop the next [1,2] since this would lead to 1 and 2 being in the result 3 times, and then take 3, which leads to [1,2,3,1,2,3].
+
+# def delete_nth()
+# end
+
+## Execute:
+# delete_nth([1, 1, 1, 1], 2) # => [1,1]
+# delete_nth([20, 37, 20, 21], 1) # [20, 37, 21]
+
+
+--------------------
+
+
+## 6.4 IQ TEST
+# Bob is preparing to pass IQ test. The most frequent task in this test is to find out which one of the given numbers differs from
+# the others. Bob observed that one number usually differs from the others in evenness. Help Bob — to check his answers, he
+# needs a program that among the given numbers finds one that is different in evenness, and return a position of this number.
+# Note: Keep in mind that your task is to help Bob solve a real IQ test, which means indexes of the elements start from 1 (not 0)
+
+
+## Execute:
+# iq_test("2 4 7 8 10") # => 3 The third number is odd, while the rest of the numbers are even
+# iq_test("1 2 1 1") # => 2 The second number is even, while the rest of the numbers are odd
+
+
+--------------------
+
+
+## 7.0 Count letters in string
+# In this challenge, you've to count lowercase letters in a given string and return the letter count in a hash with 'letter' as key and
+# count as 'value'. The key must be 'symbol' instead of string.
+
+# letter_count('arithmetics') # => {:a => 1, :c => 1, :e=> 1, :h => 1, :i => 2, :m => 1, :r => 1, :s => 1, :t => 1}
+
+
+--------------------
+
+
+## 8.3 Detect Pangram
+# A pangram is a sentence that contains every single letter of the alphabet at least once.
+# For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
+# Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+
+
+## Execute:
+# panagram?("The quick brown fox jumps over the lazy dog") # => true
+# panagram?("This is not a panagram") # => false
+
+
+--------------------
+
+## 8.0 +1 Array
+
+--------------------
+
+## 8.1 Reverse every other word in the string
+
+--------------------
+
+## 8.2 Consonant Value
