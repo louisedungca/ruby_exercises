@@ -329,7 +329,7 @@ p letter_count('This is a String')
 
 def pangram?(sentence)
   return "Please use letters for numerical values." if sentence.match?(/\d/)
-  formatted_sentence = sentence.gsub(" ", "").gsub(/[^a-zA-Z]/, '').downcase
+  formatted_sentence = sentence.gsub(/[^a-zA-Z]/, '').downcase
   return false if formatted_sentence.size < 26
 
   counter = Hash.new(0)
