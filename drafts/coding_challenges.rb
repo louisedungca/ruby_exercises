@@ -300,7 +300,7 @@ p iq_test([1, 1, 2, 1])
 p iq_test(" 1 s 3  3")
 p iq_test([1, 3, 5, 7])
 
-=end
+
 
 ## 7.0 Count letters in string
 # In this challenge, you've to count lowercase letters in a given string and return the letter count in a hash with 'letter' as key and
@@ -319,3 +319,26 @@ end
 
 p letter_count('arithmetics') # => {:a => 1, :c => 1, :e=> 1, :h => 1, :i => 2, :m => 1, :r => 1, :s => 1, :t => 1}
 p letter_count('This is a String')
+
+=end
+
+## 8.3 Detect Pangram
+# A pangram is a sentence that contains every single letter of the alphabet at least once.
+# For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
+# Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+
+def pangram?(sentence)
+  return "Please use letters for numerical values." if sentence.match?(/\d/)
+  formatted_sentence = sentence.gsub(" ", "").gsub(/[^a-zA-Z]/, '').downcase
+  return false if formatted_sentence.size < 26
+
+  counter = Hash.new(0)
+  formatted_sentence.each_char { |char| counter[char] += 1 }
+  counter.size == 26 ? true : false
+end
+
+## Execute:
+p pangram?("The quick brown fox jumps over the lazy dog") # => true
+p pangram?("This is not a pangram") # => false
+p pangram?("The quick brown fox jumps over the lazy dog with special characters! :)")
+p pangram?("A week has 7 days.")

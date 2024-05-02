@@ -14,30 +14,6 @@ CHALLENGE BANK
 
 --------------------
 
-
-## 7.0 Count letters in string
-# In this challenge, you've to count lowercase letters in a given string and return the letter count in a hash with 'letter' as key and
-# count as 'value'. The key must be 'symbol' instead of string.
-
-# letter_count('arithmetics') # => {:a => 1, :c => 1, :e=> 1, :h => 1, :i => 2, :m => 1, :r => 1, :s => 1, :t => 1}
-
-
---------------------
-
-
-## 8.3 Detect Pangram
-# A pangram is a sentence that contains every single letter of the alphabet at least once.
-# For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
-# Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
-
-
-## Execute:
-# panagram?("The quick brown fox jumps over the lazy dog") # => true
-# panagram?("This is not a panagram") # => false
-
-
---------------------
-
 ## 8.0 +1 Array
 
 --------------------
