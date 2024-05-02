@@ -230,7 +230,7 @@ end
 str = "foo123"
 str_incrementer(str)
 
-=end
+
 
 
 ## 6.3 Sorted? yes? no? how?
@@ -244,7 +244,7 @@ def sorted(int_arr)
   return "Please enter an array of integers." unless int_arr.instance_of?(Array)
   sort_arr = int_arr.sort
 
-  case true
+  case
   when int_arr == sort_arr
     "yes, ascending"
   when int_arr == sort_arr.sort { |a, b| b <=> a }
@@ -259,3 +259,45 @@ p sorted([5, 4, 3, 2, 1])
 p sorted([1, 2, 3, 4])
 p sorted([1, 2, 4, 3])
 p sorted("1 2 3 4")
+
+
+=end
+
+## 6.4 IQ TEST
+# Bob is preparing to pass IQ test. The most frequent task in this test is to find out which one of the given numbers differs from
+# the others. Bob observed that one number usually differs from the others in evenness. Help Bob — to check his answers, he
+# needs a program that among the given numbers finds one that is different in evenness, and return a position of this number.
+# Note: Keep in mind that your task is to help Bob solve a real IQ test, which means indexes of the elements start from 1 (not 0)
+
+def iq_test(given_num)
+  if given_num.instance_of?(String)
+    return "Invalid input. String must contain only numbers." unless given_num.match(/\A[\d\s]+\z/)
+    arr_num = given_num.split.map { |n| n.to_i }
+  elsif given_num.instance_of?(Array)
+    return "Invalid input. Array must contain only numbers." unless given_num.all? { |item| item.is_a?(Integer) }
+    arr_num = given_num
+  else
+    return "Invalid input type. Please enter a string or an array of numbers."
+  end
+
+  even_count = arr_num.count { |n| n.even? }
+  odd_count = arr_num.count { |n| n.odd? }
+
+  if even_count == 1
+    even_idx = arr_num.index { |n| n.even? }
+    return even_idx + 1 # Note: Keep in mind that your task is to help Bob solve a real IQ test, which means indexes of the elements start from 1 (not 0)
+  elsif odd_count == 1
+    odd_idx = arr_num.index { |n| n.odd? }
+    return odd_idx + 1 # Note: Keep in mind that your task is to help Bob solve a real IQ test, which means indexes of the elements start from 1 (not 0)
+  else
+    "The set of numbers are either all even or all odd."
+  end
+end
+
+## Execute:
+p iq_test("2 4 7 8 10") # => 3 The third number is odd, while the rest of the numbers are even
+p iq_test("1 2 1 1") # => 2 The second number is even, while the rest of the numbers are odd
+
+p iq_test([1, 1, 2, 1])
+p iq_test(" 1 s 3  3")
+p iq_test([1, 3, 5, 7])
