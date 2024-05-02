@@ -261,8 +261,6 @@ p sorted([1, 2, 4, 3])
 p sorted("1 2 3 4")
 
 
-=end
-
 ## 6.4 IQ TEST
 # Bob is preparing to pass IQ test. The most frequent task in this test is to find out which one of the given numbers differs from
 # the others. Bob observed that one number usually differs from the others in evenness. Help Bob — to check his answers, he
@@ -301,3 +299,23 @@ p iq_test("1 2 1 1") # => 2 The second number is even, while the rest of the num
 p iq_test([1, 1, 2, 1])
 p iq_test(" 1 s 3  3")
 p iq_test([1, 3, 5, 7])
+
+=end
+
+## 7.0 Count letters in string
+# In this challenge, you've to count lowercase letters in a given string and return the letter count in a hash with 'letter' as key and
+# count as 'value'. The key must be 'symbol' instead of string.
+
+def letter_count(str)
+  lowercase_counter = Hash.new(0)
+
+  str.gsub(" ", "").each_char do |char|
+    next unless char.match?(/[a-z]/)
+    lowercase_counter[char.to_sym] += 1
+  end
+
+  lowercase_counter
+end
+
+p letter_count('arithmetics') # => {:a => 1, :c => 1, :e=> 1, :h => 1, :i => 2, :m => 1, :r => 1, :s => 1, :t => 1}
+p letter_count('This is a String')
