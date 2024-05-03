@@ -301,7 +301,6 @@ p iq_test(" 1 s 3  3")
 p iq_test([1, 3, 5, 7])
 
 
-
 ## 7.0 Count letters in string
 # In this challenge, you've to count lowercase letters in a given string and return the letter count in a hash with 'letter' as key and
 # count as 'value'. The key must be 'symbol' instead of string.
@@ -320,7 +319,33 @@ end
 p letter_count('arithmetics') # => {:a => 1, :c => 1, :e=> 1, :h => 1, :i => 2, :m => 1, :r => 1, :s => 1, :t => 1}
 p letter_count('This is a String')
 
-=end
+
+## 8.0 +1 Array
+# Given an array of integers of any length, return an array that has 1 added to the value represented by the array.
+# - the array can't be empty
+# - only non-negative, single digit integers are allowed
+# Return nil for invalid inputs.
+
+def up_array(arr)
+  # validation: the array can't be empty
+  return nil unless arr.size > 0
+
+  # validation: only non-negative, single digit integers are allowed
+  return nil unless arr.all? { |num| (0..9).include?(num) }
+
+  int = arr.join("").to_i
+  int += 1
+
+  new_arr = int.to_s.split("")
+  new_arr
+end
+
+## Execute
+p up_array([2, 3, 9]) # => [2, 4, 0]
+p up_array([4, 3, 2, 5]) # => [4, 3, 2, 6]
+p up_array([23, 2, 3])
+p up_array([])
+
 
 ## 8.3 Detect Pangram
 # A pangram is a sentence that contains every single letter of the alphabet at least once.
@@ -342,3 +367,6 @@ p pangram?("The quick brown fox jumps over the lazy dog") # => true
 p pangram?("This is not a pangram") # => false
 p pangram?("The quick brown fox jumps over the lazy dog with special characters! :)")
 p pangram?("A week has 7 days.")
+
+
+=end
