@@ -327,11 +327,8 @@ p letter_count('This is a String')
 # Return nil for invalid inputs.
 
 def up_array(arr)
-  # validation: the array can't be empty
-  return nil unless arr.size > 0
-
-  # validation: only non-negative, single digit integers are allowed
-  return nil unless arr.all? { |num| (0..9).include?(num) }
+  # validations
+  return nil unless arr.size > 0 && arr.all? { |num| (0..9).include?(num) }
 
   int = arr.join("").to_i
   int += 1
