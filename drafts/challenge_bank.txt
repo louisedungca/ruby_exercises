@@ -1,0 +1,37 @@
+CHALLENGE BANK
+
+## 6.1 Enough is enough!
+# Given a list lst and a number N, create a new list that contains each number of lst at most N times without reordering.
+# For example if N = 2, and the input is [1,2,3,1,2,1,2,3], you take [1,2,3,1,2], drop the next [1,2] since this would lead to 1 and 2 being in the result 3 times, and then take 3, which leads to [1,2,3,1,2,3].
+
+# def delete_nth()
+# end
+
+## Execute:
+# delete_nth([1, 1, 1, 1], 2) # => [1,1]
+# delete_nth([20, 37, 20, 21], 1) # [20, 37, 21]
+
+--------------------
+
+## 8.0 +1 Array
+# Given an array of integers of any length, return an array that has 1 added to the value represented by the array.
+# - the array can't be empty
+# - only non-negative, single digit integers are allowed
+# Return nil for invalid inputs.
+
+## Execute
+# p up_array([2, 3, 9]) # => [2, 3, 0]
+# p up_array([4, 3, 2, 5]) # => [4, 3, 2, 6]
+--------------------
+
+## 8.1 Reverse every other word in the string
+# Reverse every other word in a given string, then return the string. Throw away any leading or trailing whitespace, while ensuring there is exactly one space between each word.
+# Punctuation marks should be treated as if they are a part of the word in this challenge.
+
+## Execute
+# p reverse_alternate("Did it work?") # => "Did ti work?"
+# p reverse_alternate("") => ""
+
+--------------------
+
+## 8.2 Consonant Value
